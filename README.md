@@ -14,6 +14,10 @@ npm install
 quasar dev
 ```
 
+### Add cordoba to our project
+```bash
+quasar mode add cordova
+```
 
 ### Build the app for production
 ```bash
