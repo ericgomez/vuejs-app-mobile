@@ -10,6 +10,18 @@
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  mounted() {
+    console.debug('HACIENDO PRUEBAS!!!!')
+    console.log(JSON.stringify(this.user))
+  },
+  data() {
+    return {
+      user: {
+        name: 'Eric',
+        lastName: 'Gomez'
+      }
+    }
+  }
 }
 </script>

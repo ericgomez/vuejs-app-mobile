@@ -84,6 +84,23 @@ cd ..
 ```
 When launching the project the icons will be generated correctly.
 
+### Debugging with adb and Google Chrome
+If you only have one device connected, run the following commands to get rid of the offline connections:
+```bash
+adb kill-server
+adb devices
+```
+`adb kill-server` fixes the problem with offline emulators.
+
+#### debug with adb
+```bash
+adb logcat --pid=$(adb shell pidof -s mx.ericgomez.accounts.app) -v color
+```
+`mx.ericgomez.accounts.app` ID application.
+
+#### debug with Google Chrome
+let's go to the route `chrome://inspect/#devices`, We look for our device in Remote Target and press on `inspect`
+
 ### Build the app for production
 ```bash
 quasar build
