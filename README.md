@@ -19,6 +19,18 @@ quasar dev
 quasar mode add cordova
 ```
 
+### Add Android platform to our APP
+```bash
+cd src-cordova
+cordova platform add android
+```
+
+### Comprobar requisitos APP
+```bash
+cd src-cordova
+cordova requirements
+```
+
 ### Build the app for production
 ```bash
 quasar build
