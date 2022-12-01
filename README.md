@@ -69,6 +69,21 @@ quasar ext add ide-helper
 quasar ext add @quasar/dotenv
 ```
 
+### Generate icon and splash screen
+[Documentacion Icono y splashScreen Quasar](https://v1.quasar.dev/options/app-icons)
+> To change the icon and splash replace the file app-icon-png and app-splashscreen.png.
+
+```bash
+npm install -g @quasar/icongenie
+icongenie generate
+
+cd src-cordova
+cordova plugin add cordova-plugin-splashscreen
+cordova plugin save
+cd ..
+```
+When launching the project the icons will be generated correctly.
+
 ### Build the app for production
 ```bash
 quasar build
