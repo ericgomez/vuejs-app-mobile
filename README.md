@@ -43,7 +43,7 @@ cd src-cordova
 quasar dev -m cordova -T android
 ```
 
-### Instalar dependicas package.json
+### Install dependicates package.json
 > Vuex persisted State is useful to save the data of our application (by default in localstorage) persistently.
 [Vuex persisted State](https://github.com/robinvdvleuten/vuex-persistedstate)
 
@@ -52,6 +52,21 @@ quasar dev -m cordova -T android
 
 ```bash
 npm install apexcharts  moment moment-range vue-apexcharts vuex-persistedstate
+```
+
+### Help development tools (Extensions)
+[Quasar ide-helper](https://www.npmjs.com/package/quasar-app-extension-ide-helper)
+> quasar ide helper helps us to add autocompletion but only for the case of the WebStorm IDE.
+
+```bash
+quasar ext add ide-helper
+```
+
+[Quasar dotenv](https://quasar.dev/app-extensions/discover)
+> dotenv allows us to generate environment variables through .env files, useful for configuring data in different environments.
+
+```bash
+quasar ext add @quasar/dotenv
 ```
 
 ### Build the app for production
