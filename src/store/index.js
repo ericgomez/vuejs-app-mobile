@@ -1,9 +1,8 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import createPersistedState from "vuex-persistedstate";
 
-// import example from './module-example'
-
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 /*
  * If not building with SSR mode, you can
@@ -14,16 +13,13 @@ Vue.use(Vuex)
  * with the Store instance.
  */
 
-export default function (/* { ssrContext } */) {
-  const Store = new Vuex.Store({
-    modules: {
-      // example
-    },
-
-    // enable strict mode (adds overhead!)
-    // for dev mode only
-    strict: process.env.DEBUGGING
-  })
-
-  return Store
-}
+/*
+ * If not building with SSR mode, you can directly export the Store instantiation;
+ * Como no estamos trabajando en una aplicacion SSR exportamos directamente el store
+ */
+export default new Vuex.Store({
+  // enable strict mode (adds overhead!)
+  // for dev mode only
+  strict: process.env.DEBUGGING,
+  plugins: [createPersistedState()],
+});
