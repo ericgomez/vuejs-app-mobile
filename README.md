@@ -101,6 +101,20 @@ adb logcat --pid=$(adb shell pidof -s mx.ericgomez.accounts.app) -v color
 #### debug with Google Chrome
 let's go to the route `chrome://inspect/#devices`, We look for our device in Remote Target and press on `inspect`
 
+### Add new module in Quasar
+```bash
+quasar new <p|page> [-f <option>] <page_file_name>
+quasar new <l|layout> [-f <option>] <layout_file_name>
+quasar new <c|component> [-f <option>] <component_file_name>
+quasar new <b|boot> [-f ts] <boot_name>
+quasar new <s|store> [-f ts] <store_module_name>
+```
+
+### Add new store module in Quasar (quasar new <s|store> [store-module-name])
+```bash
+quasar new store [store-module-name]
+```
+
 ### Build the app for production
 ```bash
 quasar build

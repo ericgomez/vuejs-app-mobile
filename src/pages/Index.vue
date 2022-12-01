@@ -12,16 +12,8 @@
 export default {
   name: 'PageIndex',
   mounted() {
-    console.debug('HACIENDO PRUEBAS!!!!')
-    console.log(JSON.stringify(this.user))
+    const isLogged = this.$store.getters['auth/isLogged'];
+    console.log(isLogged);
   },
-  data() {
-    return {
-      user: {
-        name: 'Eric',
-        lastName: 'Gomez'
-      }
-    }
-  }
 }
 </script>

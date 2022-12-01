@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import createPersistedState from "vuex-persistedstate";
+import auth from './auth';
 
 Vue.use(Vuex);
 
@@ -22,4 +23,7 @@ export default new Vuex.Store({
   // for dev mode only
   strict: process.env.DEBUGGING,
   plugins: [createPersistedState()],
+  modules: {
+    auth
+  }
 });
