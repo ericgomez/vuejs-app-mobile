@@ -90,6 +90,35 @@
       </q-list>
     </q-drawer>
 
+    <q-footer elevated v-if="isLogged">
+      <q-tabs>
+        <q-route-tab
+          label="Inicio"
+          icon="home"
+          to="/"
+          exact
+        />
+        <q-route-tab
+          label="Ingresos"
+          icon="attach_money"
+          to="/incomes"
+          exact
+        />
+        <q-route-tab
+          label="Gastos"
+          icon="money_off"
+          to="/expenses"
+          exact
+        />
+        <q-route-tab
+          label="Reportes"
+          icon="insert_chart_outlined"
+          to="/reports"
+          exact
+        />
+      </q-tabs>
+    </q-footer>
+
     <q-page-container>
       <router-view />
     </q-page-container>
