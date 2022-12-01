@@ -10,8 +10,13 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "apexcharts": "^3.36.3",
     "core-js": "^3.6.5",
-    "quasar": "^1.0.0"
+    "moment": "^2.29.4",
+    "moment-range": "^4.0.2",
+    "quasar": "^1.0.0",
+    "vue-apexcharts": "^1.6.2",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0"

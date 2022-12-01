@@ -43,6 +43,17 @@ cd src-cordova
 quasar dev -m cordova -T android
 ```
 
+### Instalar dependicas package.json
+> Vuex persisted State is useful to save the data of our application (by default in localstorage) persistently.
+[Vuex persisted State](https://github.com/robinvdvleuten/vuex-persistedstate)
+
+> Vuex ApexCharts allows us to generate charts quickly and easily.
+[Vuex ApexCharts](https://apexcharts.com/)
+
+```bash
+npm install apexcharts  moment moment-range vue-apexcharts vuex-persistedstate
+```
+
 ### Build the app for production
 ```bash
 quasar build
