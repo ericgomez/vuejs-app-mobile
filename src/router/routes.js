@@ -8,7 +8,10 @@ const routes = [
       { path: 'login', name: 'Login', component: () => import('pages/LoginPage.vue') },
       { path: 'incomes', name: 'Incomes', component: () => import('pages/Incomes/IncomesPage.vue') },
       { path: 'incomes/create', name: 'IncomesCreate', component: () => import('pages/Incomes/IncomesCreate.vue') },
-      { path: 'incomes/:id', name: 'IncomesEdit', component: () => import('pages/Incomes/IncomesEdit.vue') }
+      { path: 'incomes/:id', name: 'IncomesEdit', component: () => import('pages/Incomes/IncomesEdit.vue') },
+      { path: 'expenses', name: "Expenses", component: () => import('pages/Expenses/ExpensesPage.vue') },
+      { path: 'expenses/create', name: "ExpensesCreate", component: () => import('pages/Expenses/ExpensesCreate.vue') },
+      { path: 'expenses/:id', name: "ExpensesEdit", component: () => import('pages/Expenses/ExpensesEdit.vue') },
     ]
   },
 

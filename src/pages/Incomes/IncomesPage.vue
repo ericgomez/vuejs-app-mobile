@@ -115,7 +115,7 @@ export default {
       this.$router.push({ name: "IncomesEdit", params: { id: income.id }});
     },
     removeIncome (income) {
-      this.$store.commit("incomes/REMOVE_INCOMING", income.id);
+      this.$store.commit("incomes/REMOVE_INCOME", income.id);
 
       this.$q.notify({
         color: 'green-4',
