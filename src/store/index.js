@@ -4,6 +4,7 @@ import createPersistedState from "vuex-persistedstate";
 import auth from './auth';
 import incomes from './incomes';
 import expenses from './expenses';
+import timeline from './timeline';
 
 Vue.use(Vuex);
 
@@ -28,6 +29,7 @@ export default new Vuex.Store({
   modules: {
     auth,
     incomes,
-    expenses
+    expenses,
+    timeline
   }
 });
