@@ -34,7 +34,41 @@
 <script>
 export default {
   name: 'LoginPage',
+  data () {
+    return {
+      form: {
+        password: null
+      }
+    }
+  },
+  computed: {
+    loginHintComputed () {
+      if (this.$store.state.auth.firstAccess) {
+        return 'Establece tu nueva contraseña';
+      }
+      return 'Introduce tu contraseña';
+    }
+  },
   methods: {
+    successLogin () {
+      this.$store.commit("auth/SET_ACCESS", this.form.password);
+      this.$q.notify({
+        color: 'green-3',
+        textColor: 'white',
+        icon: 'cloud_done',
+        message: 'Bienvenido a la APP'
+      });
+      this.$router.replace("/");
+    },
+    wrongLogin () {
+      this.$store.commit("auth/SET_ACCESS", null);
+      this.$q.notify({
+        color: 'red-3',
+        textColor: 'white',
+        icon: 'error',
+        message: 'Los datos son incorrectos'
+      });
+    },
     login () {
       if (this.$store.state.auth.firstAccess) {
         this.successLogin();
