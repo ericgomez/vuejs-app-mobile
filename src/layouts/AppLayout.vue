@@ -172,6 +172,16 @@ export default {
     financialReports () {
       this.$router.push({ name: 'Reports' });
       this.leftDrawerOpen = false;
+    },
+    logout () {
+      this.$store.commit("auth/LOGOUT");
+      this.$router.replace({ name: "Login" });
+      this.leftDrawerOpen = false;
+
+      // exit app - optional
+      if (navigator && navigator.app) {
+        //navigator['app'].exitApp();
+      }
     }
   }
 }
