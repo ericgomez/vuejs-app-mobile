@@ -115,6 +115,12 @@ quasar new <s|store> [-f ts] <store_module_name>
 quasar new store [store-module-name]
 ```
 
+### Add Plugin in Quasar boot (npx quasar new boot [plugin-name])
+Add [plugin-name] in quasar.config.js
+```bash
+npx quasar new boot [plugin-name]
+```
+
 ### Build the app for production
 ```bash
 quasar build
