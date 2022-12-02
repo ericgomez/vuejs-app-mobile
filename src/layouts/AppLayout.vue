@@ -173,6 +173,30 @@ export default {
       this.$router.push({ name: 'Reports' });
       this.leftDrawerOpen = false;
     },
+    resetData () {
+      // Dialog is a plugin quasar
+      this.$q.dialog({
+        title: 'Restablecer datos',
+        message: '¿Seguro que quieres eliminar los datos de la aplicación?',
+        cancel: true,
+        persistent: true
+      })
+        .onOk(() => {
+          this.$store.commit("expenses/RESET");
+          this.$store.commit("incomes/RESET");
+          this.$q.notify({
+            color: 'green-4',
+            textColor: 'white',
+            icon: 'cloud_done',
+            message: 'Datos restablecidos correctamente'
+          });
+          // Emit Event Global
+          this.$root.$emit("resetData");
+
+          this.leftDrawerOpen = false;
+          this.$router.replace('/');
+        })
+    },
     logout () {
       this.$store.commit("auth/LOGOUT");
       this.$router.replace({ name: "Login" });

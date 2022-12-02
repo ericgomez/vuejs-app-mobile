@@ -1,16 +1,15 @@
-export function operationFiltered(state) {
+export function operationsFiltered(state) {
   return function ({ allIncomes, allExpenses }) {
     let operations = {};
 
     if (allIncomes.length) {
       allIncomes = allIncomes.sort(function (a, b) {
-        return new Date(a.date) - new Date(b.date);
+        return new Date(b.date) - new Date(a.date);
       });
 
       allIncomes.forEach(i => {
         const [year, month] = i.date.split("/");
         const date = `${month}/${year}`;
-
         if (!operations.hasOwnProperty(date)) {
           operations[date] = {
             incomes: [],
@@ -19,7 +18,6 @@ export function operationFiltered(state) {
             totalExpenses: 0
           };
         }
-
         operations[date].totalIncomes += parseInt(i.amount);
         operations[date].incomes.push(i);
       });
@@ -27,7 +25,7 @@ export function operationFiltered(state) {
 
     if (allExpenses.length) {
       allExpenses = allExpenses.sort(function (a, b) {
-        return new Date(a.date) - new Date(b.date);
+        return new Date(b.date) - new Date(a.date);
       });
 
       allExpenses.forEach(e => {
