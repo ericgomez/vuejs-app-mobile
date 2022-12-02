@@ -121,9 +121,22 @@ Add [plugin-name] in quasar.config.js
 npx quasar new boot [plugin-name]
 ```
 
-### Build the app for production
+### Build the Android app for production
 ```bash
-quasar build
+quasar build -m android
+```
+Optional
+`keytool -genkey -v -keystore release-<name-application>.keystore -alias <name-application> -keyalg RSA -keysize 2048 -validity 20000`
+```bash
+keytool -genkey -v -keystore release-accounts.keystore -alias accounts -keyalg RSA -keysize 2048 -validity 20000
+```
+`jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore release-<name-application>.keystore dist/cordova/android/app-release-unsigned.apk <name-application>`
+```bash
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore release-accounts.keystore dist/cordova/android/app-release-unsigned.apk accounts
+```
+`~/Library/Android/sdk/build-tools/30.0.0/zipalign -v 4 dist/cordova/android/app-release-unsigned.apk <name-application>.apk`
+```bash
+~/Library/Android/sdk/build-tools/30.0.0/zipalign -v 4 dist/cordova/android/app-release-unsigned.apk AppAccounts.apk
 ```
 
 ### Customize the configuration
