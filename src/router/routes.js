@@ -12,6 +12,7 @@ const routes = [
       { path: 'expenses', name: "Expenses", component: () => import('pages/Expenses/ExpensesPage.vue') },
       { path: 'expenses/create', name: "ExpensesCreate", component: () => import('pages/Expenses/ExpensesCreate.vue') },
       { path: 'expenses/:id', name: "ExpensesEdit", component: () => import('pages/Expenses/ExpensesEdit.vue') },
+      { path: 'reports', name: "Reports", component: () => import('pages/ReportsPage.vue') },
     ]
   },
 
