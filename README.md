@@ -37,7 +37,7 @@ cd src-cordova
 cordova requirements
 ```
 
-### run Android app on emulator
+### Run Android app on emulator
 ```bash
 cd src-cordova
 quasar dev -m cordova -T android
@@ -125,7 +125,7 @@ npx quasar new boot [plugin-name]
 ```bash
 quasar build -m android
 ```
-Optional
+#### Optional
 `keytool -genkey -v -keystore release-<name-application>.keystore -alias <name-application> -keyalg RSA -keysize 2048 -validity 20000`
 ```bash
 keytool -genkey -v -keystore release-accounts.keystore -alias accounts -keyalg RSA -keysize 2048 -validity 20000
